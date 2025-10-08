@@ -4,11 +4,11 @@ ________________________________________________________________________________
 
 
 ### General Description
-    The code implements a program that performs various actions, such as POST, GET, and DELETE.
+The code implements a program that performs various actions, such as POST, GET, and DELETE.
 The code follows the structure of its skeleton, with an additional field named jwt that contains the token required for authentication with the library.
 
 ### Implementation
-    The program includes a command parser that handles different actions,
+The program includes a command parser that handles different actions,
 including register, login, enter_library, get_books, get_book, add_book,
 delete_book, logout, and exit.
 
