@@ -1,0 +1,42 @@
+# Pcom Tema 4 - HTTP
+## Nedelcu Andrei-David 334CA
+
+
+### Descrire generala
+    Codul implementeaza un program care efectueaza diverse actiuni, cum ar
+fi POST, GET și DELETE. Este o adaptare a laboratorului 9 cu unele modificări.
+Codul urmează o structura scheletului acestuia, cu un câmp suplimentar numit jwt
+care conține token-ul necesar pentru autentificarea la bibliotecă.
+
+### Implementare
+    Programul include un parser de comenzi care gestioneaza diferite actiuni,
+incluzand register, login, enter_library, get_books, get_book, add_book,
+delete_book, logout, si exit.
+
+Fiecare actiune este implementata ca o functie separata, iar structura generala
+a acestor functii este similara. Iata o prezentare generală a flow-lui acestora:
+
+- verificarea parametrilor suplimentari necesari pentru actiune, cum ar fi un ID
+pentru get_book sau delete_book, sau un titlu pentru add_book
+
+- validarea intrarilor optionale, asigurandu-ne ca nu exista spatii inutile sau
+ca intrarea contine doar caractere valide, cum ar fi in cazul unui nume de autor
+
+- selectarea functiei corespunzatoare din request.c pe baza actiunii dorite
+(compute_get_message, post_message, sau delete_message) + alegerea parametrilor
+functiei in consecinta
+
+- trimiterea mesajului construit catre server si primirea raspunsului
+
+- dacă raspunsul contine o eroare, afisarea mesajului de eroare, in caz contrar,
+afisarea unui mesaj de succes
+
+Codul urmează acest tipar general pentru fiecare actiune, asigurand o gestionare
+consistenta a cererilor si raspunsurilor.
+Pentru o afisare a cartilor mai draguta am folosit biblioteca parson.
+
+### Fisiere
+    Pe langa fisierele din laboratorul 9, am creat un header pentru client, numit
+client.h. De asemenea, am creat un alt header, numit client_helpers.h, care contine
+functii care m-au ajutat sa rezolv tema. Implementarile acestor functii se afla în
+client_helper.c.
