@@ -4,8 +4,8 @@ ________________________________________________________________________________
 
 
 ### General Description
-The code implements a program that performs various actions, such as POST, GET, and DELETE.
-The code follows the structure of its skeleton, with an additional field named jwt that contains the token required for authentication with the library.
+The code implements a program that allows you to perform various actions, such as POST, GET, and DELETE, CRUD actions.
+In addition from the class skeleton, I added a field named jwt that contains the token required for authentication with the library.
 
 ### Implementation
 The program includes a command parser that handles different actions,
