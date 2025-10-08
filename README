@@ -1,42 +1,38 @@
-# Pcom Tema 4 - HTTP
-## Nedelcu Andrei-David 334CA
+# HTTP-Client for Library Management System
+## Copyright 2023 Nedelcu Andrei-David
+___________________________________________________________________________________________
 
 
-### Descrire generala
-    Codul implementeaza un program care efectueaza diverse actiuni, cum ar
-fi POST, GET și DELETE. Este o adaptare a laboratorului 9 cu unele modificări.
-Codul urmează o structura scheletului acestuia, cu un câmp suplimentar numit jwt
-care conține token-ul necesar pentru autentificarea la bibliotecă.
+### General Description
+    The code implements a program that performs various actions, such as POST, GET, and DELETE.
+The code follows the structure of its skeleton, with an additional field named jwt that contains the token required for authentication with the library.
 
-### Implementare
-    Programul include un parser de comenzi care gestioneaza diferite actiuni,
-incluzand register, login, enter_library, get_books, get_book, add_book,
-delete_book, logout, si exit.
+### Implementation
+    The program includes a command parser that handles different actions,
+including register, login, enter_library, get_books, get_book, add_book,
+delete_book, logout, and exit.
 
-Fiecare actiune este implementata ca o functie separata, iar structura generala
-a acestor functii este similara. Iata o prezentare generală a flow-lui acestora:
+Each action is implemented as a separate function, and the general structure
+of these functions is similar. Here is an overview of their flow:
 
-- verificarea parametrilor suplimentari necesari pentru actiune, cum ar fi un ID
-pentru get_book sau delete_book, sau un titlu pentru add_book
+* checking the additional parameters required for the action, such as an ID
+for get_book or delete_book, or a title for add_book
 
-- validarea intrarilor optionale, asigurandu-ne ca nu exista spatii inutile sau
-ca intrarea contine doar caractere valide, cum ar fi in cazul unui nume de autor
+* validating optional inputs, ensuring that there are no unnecessary spaces or
+that the input contains only valid characters, such as in the case of an author’s name
 
-- selectarea functiei corespunzatoare din request.c pe baza actiunii dorite
-(compute_get_message, post_message, sau delete_message) + alegerea parametrilor
-functiei in consecinta
+* selecting the corresponding function from request.c based on the desired action
+(compute_get_message, post_message, or delete_message) + choosing the function parameters accordingly
 
-- trimiterea mesajului construit catre server si primirea raspunsului
+* sending the constructed message to the server and receiving the response
 
-- dacă raspunsul contine o eroare, afisarea mesajului de eroare, in caz contrar,
-afisarea unui mesaj de succes
+* if the response contains an error, displaying the error message; otherwise,
+displaying a success message
+
+The code follows this general pattern for each action, ensuring consistent
+handling of requests and responses.
+For a nicer display of books, the Parson library was used.
 
 Codul urmează acest tipar general pentru fiecare actiune, asigurand o gestionare
 consistenta a cererilor si raspunsurilor.
 Pentru o afisare a cartilor mai draguta am folosit biblioteca parson.
-
-### Fisiere
-    Pe langa fisierele din laboratorul 9, am creat un header pentru client, numit
-client.h. De asemenea, am creat un alt header, numit client_helpers.h, care contine
-functii care m-au ajutat sa rezolv tema. Implementarile acestor functii se afla în
-client_helper.c.
