@@ -32,7 +32,3 @@ displaying a success message
 The code follows this general pattern for each action, ensuring consistent
 handling of requests and responses.
 For a nicer display of books, the Parson library was used.
-
-Codul urmează acest tipar general pentru fiecare actiune, asigurand o gestionare
-consistenta a cererilor si raspunsurilor.
-Pentru o afisare a cartilor mai draguta am folosit biblioteca parson.
